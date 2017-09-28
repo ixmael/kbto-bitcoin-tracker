@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    nginx:
+        build: ~/docker-images/nginx
+        ports:
+            - "8080:8080"
+        volumes:
+            - ./config/nginx/kbto-bitcoin-tracker.conf:/etc/nginx/conf.d/kbto-bitcoin-tracker.conf
+            - ../..:/app
+    php7fpm:
+        build: ~/docker-images/php7fpm
+        ports:
+            - "9000:9000"
+        volumes:
+            - ./config/php7fpm/php.conf:/usr/local/etc/php-fpm.conf
+            - ../..:/app
+        environment:
+            - COMPOSER_HOME=/app/bin/.composer_cache
+            - PATH=/app/bin:$PATH
