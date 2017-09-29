@@ -6,7 +6,7 @@ services:
         ports:
             - "8080:8080"
         volumes:
-            - ./config/nginx/kbto-bitcoin-tracker.conf:/etc/nginx/conf.d/kbto-bitcoin-tracker.conf
+            - ./config/nginx/ktbo-bitcoin-tracker.conf:/etc/nginx/conf.d/bitcoin-tracker.conf
             - ../..:/app
     php7fpm:
         build: ~/docker-images/php7fpm
