@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-})->name('index');
+
+Route::get('/data', 'Controller@showData')->name('data');
+Route::get('/', 'Controller@showIndex')->name('index');
