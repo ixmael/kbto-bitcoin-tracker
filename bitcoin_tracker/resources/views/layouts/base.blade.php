@@ -21,24 +21,31 @@
                     <a class="navbar-brand" href="{{ route('index') }}">Bitcoin Tracker</a>
                 </div>
                 <div id="navbar" class="collapse navbar-collapse">
-                    <p class="navbar-text">Última actualización <span id="last_update">A</span></p>
+                    <p class="navbar-text">
+                        @if ($last_update_tracker)
+                            <span id="last_update_label">Última actualización</span>
+                            <span id="last_update" class="label label-primary">{{ $last_update_tracker->created_at }}</span>
+                        @else
+                            <span id="last_update_label">No hay datos.</span>
+                            <span id="last_update" class="label label-primary"></span>
+                        @endif
+                    </p>
                 </div>
             </div>
         </nav>
 
         <div class="container">
-            <div class="row">
-                <h1 class="col-lg-12 text-center">
-                    Probando
-                </h1>
-                <div class="col-lg-12">
-                    test
-                </div>
-            </div>
+            @section('canvas_block')
+            @show
         </div>
 
+        <!--
         <script src="/js/manifest.js"></script>
         <script src="/js/vendor.js"></script>
+        -->
         <script src="/js/app.js"></script>
+        <!--
+        <script src="{{ asset('js/app.js') }}"></script>
+        -->
     </body>
 </html>
