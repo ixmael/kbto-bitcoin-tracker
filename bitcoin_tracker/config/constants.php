@@ -14,4 +14,5 @@ return [
     */
 
     'bitso_api' => env('BITSO_API', null),
+    'tracker_time_fetch' => env('TRACKER_TIME_FETCH', 5000),
 ];

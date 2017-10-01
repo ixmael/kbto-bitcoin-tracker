@@ -29,8 +29,6 @@ if("0" !== graph.getAttribute('data-last-item')) {
     data_trigger = data_update;
 }
 
-//window.data_trigger = data_trigger;
-
 var inter = setInterval(function() {
     data_trigger();
-}, 5000); 
+}, graph.getAttribute('data-tracker-time-fetch')); 
