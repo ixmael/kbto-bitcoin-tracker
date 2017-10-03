@@ -16,7 +16,12 @@ composer install
 El proyecto requiere el archivo de parámetros **bitcoin_tracker/env**. Los parámetros básicos del proyecto están en el archivo
 **bitcoin_tracker/.env.example**.
 ```
-cp bitcoin_tracker/.env.example bitcoin_tracker/env
+cp bitcoin_tracker/.env.example bitcoin_tracker/.env
+```
+
+Hay que generar la llave para la aplicación con el siguiente comando (dentro de la carpeta *bitcoin_tracker*):
+```
+php artisian key:generate
 ```
 
 ##### Parámetros
